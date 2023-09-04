@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head') %>
+<body class=" <%= locals.userLogin && userLogin[2] %>">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="card  col-8 mt-5">
+                <div class="row p-4">
+                    <% if (locals.userLogin) { %>
+                        <h2 class="text-center">
+                            Hola <b><%= locals.userLogin && userLogin[0] %></b> elegiste el color <span class="p-2 <%= locals.userLogin && userLogin[2] %>"><%= locals.userLogin && userLogin[2] %></span> <br>
+                            tu mail es: <%= locals.userLogin && userLogin[1] %>
+                        </h2>
+                        <a href="/about" class="btn btn-dark">Continue</a>
+                    <% } else { %>
+                        <h1>Vuelve a intentar más tarde xd</h1>
+                    <% } %>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

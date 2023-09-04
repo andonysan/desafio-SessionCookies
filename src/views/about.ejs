@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head') %>
+<body class=" <%= locals.userLogin && userLogin[2] %> ">
+    <div class="container">
+        <div class="row mt-5">
+            <div class="card">
+                <h2>
+                    Hola <strong><%= locals.userLogin && userLogin[0] %></strong>, gracias por visitarnos
+                </h2>
+                <a href="/logout" class="btn btn-dark">Salir</a> 
+            </div>
+        </div>
+    </div>
+</body>
+</html>

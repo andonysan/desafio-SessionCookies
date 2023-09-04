@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head') %>
+
+
+<body class="detalle">
+
+    <main class="detalle__main">
+        <div class="row">
+            <div class="col-12 col-md-10 col-lg-8 mx-auto mt-5">
+                <div class="card mb-3 shadow-lg">
+                  <div class="card-header">
+                    Perfil usuario
+                  </div>
+                  <div class="card-body">
+                    <form action="/processLogin" method="POST" class="row">
+                        <div class="col-12 col-md-6 mb-3">
+                            <label for="name" class="form-label">User name</label>
+                            <input type="text" class="form-control <%= locals.errors && (errors.name && 'is-invalid') %>" id="name" placeholder="ingrese su nombre" name="name" value="<%= locals.old && (old.name && old.name) %>">
+                        </div>
+                        <div class="col-12 col-md-6 mb-3">
+                            <label for="email" class="form-label ">Email</label>
+                            <input type="text" class="form-control <%= locals.errors && (errors.email && 'is-invalid') %>" id="email" placeholder="Tu Email" name="email" value="<%= locals.old && (old.email && old.email) %>">
+                        </div>
+                        <div class="col-12 col-md-6 mb-3">
+                            <label for="age" class="form-label">Age</label>
+                            <input type="number" class="form-control <%= locals.errors && (errors.age && 'is-invalid') %>" id="age" placeholder="" name="age" value="<%= locals.old && (old.age && old.age) %>">
+                        </div>
+                        <div class="col-12 col-md-6 mb-3">
+                          <label for="color" class="form-label"> Select a color</label>
+                          <select type="text" class="form-select <%= locals.errors && (errors.categoryColor&& 'is-invalid') %>" id="color" name="categoryColor">
+                            <option value="" hidden>Seleccione...</option>
+                            <option value="red" <%= locals.old && (old.categoryColor == 'red' && 'selected')  %>>Rojo</option>
+                            <option value="blue" <%= locals.old && (old.categoryColor == 'blue' && 'selected')  %>>Azul</option>
+                            <option value="green" <%= locals.old && (old.categoryColor == 'gren' && 'selected')  %>>Verde</option>
+                            <option value="yellow" <%= locals.old && (old.categoryColor == 'yellow' && 'selected')  %>>Amarillo</option>
+                            <option value="cyan" <%= locals.old && (old.categoryColor == 'cyan' && 'selected')  %>>celeste</option>
+                          </select>
+                        </div>
+                        <div class="col-12 col-md-6 mb-3">
+                          <input class="form-check-input" type="checkbox" value="" id="remember" name="remember">
+                          <label class="form-check-label" for="remember">Remember</label>
+                        </div>
+                            
+                        <div class="d-flex justify-content-end">
+                            <button type="submit" class="btn btn-dark">Send</button>
+                        </div>
+                    </form>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>
+</body>
+</html>
